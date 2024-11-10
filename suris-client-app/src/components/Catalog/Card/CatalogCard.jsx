@@ -1,20 +1,34 @@
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
+import { useState } from "react";
 
-export const CatalogCard = ({props}) => {
+    export const CatalogCard = ({ props, handleSelectedCard, isChecked
+    }) => {
+    const { codigo, descripcion, precio, deposito } = props;
 
-  const {codigo,descripcion , precio,deposito} = props;
-    console.log(props)
+    const handleSelect = () => {
+        handleSelectedCard(props, !isChecked);
+      };
+
     return (
         <Card>
-            <CardHeader>
+        <CardHeader>
+            <input type="checkbox"
+            checked={isChecked} onChange={handleSelect}
+            />
             <CardTitle>{descripcion}</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <p>Precio: {precio}$</p>W
-                <p>Codigo: {codigo}</p>
-            </CardContent>
-            <CardFooter>Deposito : {deposito}</CardFooter>
+        </CardHeader>
+        <CardContent>
+            <p>{codigo}</p>
+            <p>{precio}$</p>
+        </CardContent>
+        <CardFooter>Deposito : {deposito}</CardFooter>
         </Card>
-    )
-}
+    );
+    };
