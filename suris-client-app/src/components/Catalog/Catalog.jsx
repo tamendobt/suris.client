@@ -59,9 +59,7 @@ export const Catalog = () => {
           articulos: articulosSelected,
           vendedor: vendedorSelected,
         };
-        console.log("pedidoData", pedidoData);
         const response = await createPedido(pedidoData);
-        console.log(response);
         if (response.success) {
           setSuccessMessage(response.message);
         } else {
