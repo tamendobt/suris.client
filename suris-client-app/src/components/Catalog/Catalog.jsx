@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { Button } from "../ui/button";
-import { CatalogCard } from "./Card/CatalogCard";
+import { CatalogCard } from "./Card/catalog-card";
 import { getArticulosByDeposito } from "@/services/articulo.service";
 import { getVendedores } from "@/services/vededor.service";
-import { CatalogSelect } from "./Select/CatalogSelect";
+import { CatalogSelect } from "./Select/catalog-select";
 import { createPedido } from "@/services/pedido.service";
-import { CatalogAlert } from "./Alert/CatalogAlert";
+import { CatalogAlert } from "./Alert/catalog-alert";
 
 export const Catalog = () => {
   const [articulos, setArticulos] = useState([]);
